@@ -14,7 +14,7 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: #f0f0ed; /* Кремавият цвят от дизайна ти */
+            background-color: #f0f0ed; 
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -23,7 +23,6 @@
         .container {
             max-width: 600px;
             width: 100%;
-            line-height: 0;
         }
 
         /* Видеото в началото */
@@ -32,17 +31,18 @@
             height: auto;
             display: block;
         }
-        
+
+        /* Картинките (текст и долен елемент) */
         img {
             width: 100%;
             height: auto;
             display: block;
         }
 
+        /* Секцията с формата */
         .form-section {
             background-color: #f0f0ed; 
-            padding: 30px 10%;
-            line-height: normal;
+            padding: 10px 10% 40px 10%;
             text-align: center;
             font-family: 'WeddingFont', sans-serif;
         }
@@ -50,27 +50,29 @@
         label {
             display: block;
             margin-bottom: 8px;
-            color: #888888;
+            color: #000000; /* ЧЕРНИ ЗАГЛАВИЯ */
             text-transform: uppercase;
             font-size: 14px;
             font-weight: bold;
+            margin-top: 20px;
         }
 
         input, select {
             width: 100%;
             padding: 12px;
-            margin-bottom: 25px;
+            margin-bottom: 5px;
             border: 2px solid #fff;
             border-radius: 25px;
             box-sizing: border-box;
             background: white;
             font-family: inherit;
             font-size: 16px;
+            color: #888888; /* СИВ ТЕКСТ В ПОЛЕТАТА */
             outline: none;
         }
 
         button {
-            background-color: #8dbce0; /* Светлосиньото от бутона ти */
+            background-color: #8dbce0;
             color: white;
             border: none;
             padding: 15px 50px;
@@ -80,7 +82,7 @@
             cursor: pointer;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             transition: 0.3s;
-            margin-top: 10px;
+            margin-top: 30px;
         }
 
         button:hover {
@@ -92,7 +94,11 @@
 <body>
 
     <div class="container">
-        <img src="top.png" alt="Покана">
+        <video autoplay muted loop playsinline>
+            <source src="intro.mp4" type="video/mp4">
+        </video>
+
+        <img src="text-header.png" alt="Гергана и Красимир - Информация">
 
         <div class="form-section">
             <form action="https://formspree.io/f/xvzbpnyd" method="POST">
@@ -121,11 +127,12 @@
             </form>
         </div>
 
-        <img src="bottom.png" alt="Програма и Локация">
+        <img src="bottom.png" alt="Програма">
     </div>
 
 </body>
 </html>
+
 
 
 
