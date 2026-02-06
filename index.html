@@ -18,6 +18,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            overflow-x: hidden;
         }
 
         .container {
@@ -26,11 +27,11 @@
             position: relative;
         }
 
-        /* Контейнер за видеото */
+        /* Видеото - ЗАГЛУШЕНО за автоматично тръгване */
         .video-wrapper {
             width: 100%;
             line-height: 0;
-            position: relative;
+            background-color: #f0f0ed;
         }
 
         video {
@@ -39,20 +40,19 @@
             display: block;
         }
 
-        /* Картинката с текста, която застъпва видеото */
+        /* Картинката, която застъпва долната част на клипа */
         .overlap-img {
             width: 100%;
             height: auto;
             display: block;
             position: relative;
             z-index: 10;
-            /* Премества картинката нагоре върху видеото */
-            margin-top: -50px; 
+            margin-top: -60px; /* Коригирай това число за повече/по-малко застъпване */
         }
 
         .form-section {
             background-color: #f0f0ed; 
-            padding: 20px 10% 40px 10%;
+            padding: 10px 10% 40px 10%;
             text-align: center;
             font-family: 'WeddingFont', sans-serif;
         }
@@ -71,94 +71,8 @@
             padding: 12px;
             border: 2px solid #fff;
             border-radius: 25px;
-            box-sizing: border-box;
-            background: white;
-            font-family: inherit;
-            font-size: 16px;
-            color: #888888;
-            outline: none;
-        }
+            box
 
-        button {
-            background-color: #8dbce0;
-            color: white;
-            border: none;
-            padding: 15px 50px;
-            border-radius: 30px;
-            font-size: 20px;
-            font-family: inherit;
-            cursor: pointer;
-            margin-top: 30px;
-        }
-
-        /* Бутон за звук (по избор) */
-        .mute-btn {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            z-index: 100;
-            background: rgba(255,255,255,0.7);
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            border: none;
-            cursor: pointer;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="container">
-        <div class="video-wrapper">
-            <video id="weddingVideo" autoplay loop playsinline>
-                <source src="intro.mp4" type="video/mp4">
-            </video>
-        </div>
-
-        <img src="text-header.png" class="overlap-img" alt="Гергана и Красимир">
-
-        <div class="form-section">
-            <form action="https://formspree.io/f/xvzbpnyd" method="POST">
-                <label for="name">Вашите имена</label>
-                <input type="text" id="name" name="Имена" required>
-
-                <label for="attendance">Ще присъствате ли?</label>
-                <select id="attendance" name="Присъствие" required>
-                    <option value="" disabled selected>Изберете опция</option>
-                    <option value="Да">Да!</option>
-                    <option value="Не">Не</option>
-                </select>
-
-                <label for="menu">Избор на меню</label>
-                <select id="menu" name="Меню" required>
-                    <option value="" disabled selected>Изберете меню</option>
-                    <option value="Месно">Месно</option>
-                    <option value="Вегетарианско">Вегетарианско</option>
-                </select>
-
-                <label for="phone">Телефонен номер</label>
-                <input type="tel" id="phone" name="Телефон" required>
-
-                <button type="submit">ИЗПРАТИ</button>
-            </form>
-        </div>
-
-        <img src="bottom.png" style="width:100%" alt="Програма">
-    </div>
-
-    <script>
-        // Скрипт, който пуска звука при първото докосване на екрана от госта
-        document.body.addEventListener('click', function() {
-            var video = document.getElementById('weddingVideo');
-            if (video.muted) {
-                video.muted = false;
-                video.play();
-            }
-        }, { once: true });
-    </script>
-
-</body>
-</html>
 
 
 
