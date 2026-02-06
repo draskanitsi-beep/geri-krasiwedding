@@ -27,27 +27,21 @@
             position: relative;
         }
 
-        /* Видеото - ЗАГЛУШЕНО за автоматично тръгване */
-        .video-wrapper {
-            width: 100%;
-            line-height: 0;
-            background-color: #f0f0ed;
-        }
-
+        /* Видеото */
         video {
             width: 100%;
             height: auto;
             display: block;
         }
 
-        /* Картинката, която застъпва долната част на клипа */
+        /* Картинката, която застъпва видеото */
         .overlap-img {
             width: 100%;
             height: auto;
             display: block;
             position: relative;
             z-index: 10;
-            margin-top: -60px; /* Коригирай това число за повече/по-малко застъпване */
+            margin-top: -60px; /* Ако искаш по-малко застъпване, направи го -30px */
         }
 
         .form-section {
@@ -71,7 +65,69 @@
             padding: 12px;
             border: 2px solid #fff;
             border-radius: 25px;
-            box
+            box-sizing: border-box;
+            background: white;
+            font-family: inherit;
+            font-size: 16px;
+            color: #888888;
+            outline: none;
+        }
+
+        button {
+            background-color: #8dbce0;
+            color: white;
+            border: none;
+            padding: 15px 50px;
+            border-radius: 30px;
+            font-size: 20px;
+            font-family: inherit;
+            cursor: pointer;
+            margin-top: 30px;
+        }
+
+        img { width: 100%; display: block; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <video autoplay loop muted playsinline>
+            <source src="intro.mp4" type="video/mp4">
+        </video>
+
+        <img src="text-header.png" class="overlap-img" alt="Гергана и Красимир">
+
+        <div class="form-section">
+            <form action="https://formspree.io/f/xvzbpnyd" method="POST">
+                <label for="name">Вашите имена</label>
+                <input type="text" id="name" name="Имена" required>
+
+                <label for="attendance">Ще присъствате ли?</label>
+                <select id="attendance" name="Присъствие" required>
+                    <option value="" disabled selected>Изберете опция</option>
+                    <option value="Да">Да, с удоволствие!</option>
+                    <option value="Не">За съжаление, не можем.</option>
+                </select>
+
+                <label for="menu">Избор на меню</label>
+                <select id="menu" name="Меню" required>
+                    <option value="" disabled selected>Изберете меню</option>
+                    <option value="Месно">Месно меню</option>
+                    <option value="Вегетарианско">Вегетарианско меню</option>
+                </select>
+
+                <label for="phone">Телефонен номер</label>
+                <input type="tel" id="phone" name="Телефон" placeholder="08XXXXXXXX" required>
+
+                <button type="submit">ИЗПРАТИ</button>
+            </form>
+        </div>
+
+        <img src="bottom.png" alt="Програма">
+    </div>
+
+</body>
+</html>
 
 
 
