@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Сватбата на Гергана и Красимир</title>
     <style>
-        /* Зареждане на шрифта */
         @font-face {
             font-family: 'WeddingFont';
             src: url('font.woff2') format('woff2');
@@ -14,7 +13,7 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: #f0f0ed; 
+            background-color: #f0f0ed; /* Кремавият цвят от дизайна ти */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -32,7 +31,6 @@
             display: block;
         }
 
-        /* Секция с формата */
         .form-section {
             background-color: #f0f0ed; 
             padding: 30px 10%;
@@ -64,7 +62,7 @@
         }
 
         button {
-            background-color: #8dbce0; /* Синьото от твоя дизайн */
+            background-color: #8dbce0; /* Светлосиньото от бутона ти */
             color: white;
             border: none;
             padding: 15px 50px;
@@ -86,17 +84,17 @@
 <body>
 
     <div class="container">
-        <img src="top.png" alt="Сватбена Покана">
+        <img src="top.png" alt="Покана">
 
         <div class="form-section">
             <form action="https://formspree.io/f/xvzbpnyd" method="POST">
                 
-                <label for="names">Вашите имена</label>
-                <input type="text" id="names" name="Имена" required>
+                <label for="name">Вашите имена</label>
+                <input type="text" id="name" name="Имена" required>
 
                 <label for="attendance">Ще присъствате ли?</label>
                 <select id="attendance" name="Присъствие" required>
-                    <option value="" disabled selected>Изберете отговор</option>
+                    <option value="" disabled selected>Изберете опция</option>
                     <option value="Да">Да, с удоволствие!</option>
                     <option value="Не">За съжаление, не можем.</option>
                 </select>
@@ -104,8 +102,8 @@
                 <label for="menu">Избор на меню</label>
                 <select id="menu" name="Меню" required>
                     <option value="" disabled selected>Изберете меню</option>
-                    <option value="Месно">Месно</option>
-                    <option value="Вегетарианско">Вегетарианско</option>
+                    <option value="Месно">Месно меню</option>
+                    <option value="Вегетарианско">Вегетарианско меню</option>
                 </select>
 
                 <label for="phone">Телефонен номер</label>
@@ -115,7 +113,7 @@
             </form>
         </div>
 
-        <img src="bottom.png" alt="Детайли за събитието">
+        <img src="bottom.png" alt="Програма и Локация">
     </div>
 
 </body>
