@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Сватбата на Гергана и Красимир</title>
     <style>
-        /* Зареждане на твоя шрифт */
+        /* Зареждане на шрифта */
         @font-face {
             font-family: 'WeddingFont';
             src: url('font.woff2') format('woff2');
@@ -14,7 +14,7 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: #f0f0ed; /* Кремавият цвят от твоя дизайн */
+            background-color: #f0f0ed; 
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -32,10 +32,10 @@
             display: block;
         }
 
-        /* Стилизиране на формата */
+        /* Секция с формата */
         .form-section {
             background-color: #f0f0ed; 
-            padding: 40px 10%;
+            padding: 30px 10%;
             line-height: normal;
             text-align: center;
             font-family: 'WeddingFont', sans-serif;
@@ -48,7 +48,6 @@
             text-transform: uppercase;
             font-size: 14px;
             font-weight: bold;
-            letter-spacing: 1px;
         }
 
         input, select {
@@ -62,25 +61,62 @@
             font-family: inherit;
             font-size: 16px;
             outline: none;
-            color: #333;
         }
 
-        /* Синият бутон от дизайна */
         button {
-            background-color: #8dbce0;
+            background-color: #8dbce0; /* Синьото от твоя дизайн */
             color: white;
             border: none;
-            padding: 15px 60px;
-            border-radius: 35px;
-            font-size: 22px;
+            padding: 15px 50px;
+            border-radius: 30px;
+            font-size: 20px;
             font-family: inherit;
             cursor: pointer;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: 0.3s;
             margin-top: 10px;
-            text-transform: uppercase;
         }
 
         button:hover {
             background-color: #76a6ca;
             transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="top.png" alt="Сватбена Покана">
+
+        <div class="form-section">
+            <form action="https://formspree.io/f/xvzbpnyd" method="POST">
+                
+                <label for="names">Вашите имена</label>
+                <input type="text" id="names" name="Имена" required>
+
+                <label for="attendance">Ще присъствате ли?</label>
+                <select id="attendance" name="Присъствие" required>
+                    <option value="" disabled selected>Изберете отговор</option>
+                    <option value="Да">Да, с удоволствие!</option>
+                    <option value="Не">За съжаление, не можем.</option>
+                </select>
+
+                <label for="menu">Избор на меню</label>
+                <select id="menu" name="Меню" required>
+                    <option value="" disabled selected>Изберете меню</option>
+                    <option value="Месно">Месно</option>
+                    <option value="Вегетарианско">Вегетарианско</option>
+                </select>
+
+                <label for="phone">Телефонен номер</label>
+                <input type="tel" id="phone" name="Телефон" placeholder="08XXXXXXXX" required>
+
+                <button type="submit">ИЗПРАТИ</button>
+            </form>
+        </div>
+
+        <img src="bottom.png" alt="Детайли за събитието">
+    </div>
+
+</body>
+</html>
