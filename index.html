@@ -23,51 +23,59 @@
         .container {
             max-width: 600px;
             width: 100%;
+            position: relative;
         }
 
-        /* Видеото в началото */
+        /* Контейнер за видеото */
+        .video-wrapper {
+            width: 100%;
+            line-height: 0;
+            position: relative;
+        }
+
         video {
             width: 100%;
             height: auto;
             display: block;
         }
 
-        /* Картинките (текст и долен елемент) */
-        img {
+        /* Картинката с текста, която застъпва видеото */
+        .overlap-img {
             width: 100%;
             height: auto;
             display: block;
+            position: relative;
+            z-index: 10;
+            /* Премества картинката нагоре върху видеото */
+            margin-top: -50px; 
         }
 
-        /* Секцията с формата */
         .form-section {
             background-color: #f0f0ed; 
-            padding: 10px 10% 40px 10%;
+            padding: 20px 10% 40px 10%;
             text-align: center;
             font-family: 'WeddingFont', sans-serif;
         }
 
         label {
             display: block;
-            margin-bottom: 8px;
-            color: #000000; /* ЧЕРНИ ЗАГЛАВИЯ */
+            margin: 20px 0 8px 0;
+            color: #000000;
             text-transform: uppercase;
             font-size: 14px;
             font-weight: bold;
-            margin-top: 20px;
         }
 
         input, select {
             width: 100%;
             padding: 12px;
-            margin-bottom: 5px;
             border: 2px solid #fff;
             border-radius: 25px;
             box-sizing: border-box;
             background: white;
             font-family: inherit;
             font-size: 16px;
-            color: #888888; /* СИВ ТЕКСТ В ПОЛЕТАТА */
+            color: #888888;
             outline: none;
         }
 
@@ -80,60 +88,77 @@
             font-size: 20px;
             font-family: inherit;
             cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: 0.3s;
             margin-top: 30px;
         }
 
-        button:hover {
-            background-color: #76a6ca;
-            transform: translateY(-2px);
+        /* Бутон за звук (по избор) */
+        .mute-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+            background: rgba(255,255,255,0.7);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            border: none;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <video autoplay muted loop playsinline>
-            <source src="intro.mp4" type="video/mp4">
-        </video>
+        <div class="video-wrapper">
+            <video id="weddingVideo" autoplay loop playsinline>
+                <source src="intro.mp4" type="video/mp4">
+            </video>
+        </div>
 
-        <img src="text-header.png" alt="Гергана и Красимир - Информация">
+        <img src="text-header.png" class="overlap-img" alt="Гергана и Красимир">
 
         <div class="form-section">
             <form action="https://formspree.io/f/xvzbpnyd" method="POST">
-                
                 <label for="name">Вашите имена</label>
                 <input type="text" id="name" name="Имена" required>
 
                 <label for="attendance">Ще присъствате ли?</label>
                 <select id="attendance" name="Присъствие" required>
                     <option value="" disabled selected>Изберете опция</option>
-                    <option value="Да">Да, с удоволствие!</option>
-                    <option value="Не">За съжаление, не можем.</option>
+                    <option value="Да">Да!</option>
+                    <option value="Не">Не</option>
                 </select>
 
                 <label for="menu">Избор на меню</label>
                 <select id="menu" name="Меню" required>
                     <option value="" disabled selected>Изберете меню</option>
-                    <option value="Месно">Месно меню</option>
-                    <option value="Вегетарианско">Вегетарианско меню</option>
+                    <option value="Месно">Месно</option>
+                    <option value="Вегетарианско">Вегетарианско</option>
                 </select>
 
                 <label for="phone">Телефонен номер</label>
-                <input type="tel" id="phone" name="Телефон" placeholder="08XXXXXXXX" required>
+                <input type="tel" id="phone" name="Телефон" required>
 
                 <button type="submit">ИЗПРАТИ</button>
             </form>
         </div>
 
-        <img src="bottom.png" alt="Програма">
+        <img src="bottom.png" style="width:100%" alt="Програма">
     </div>
+
+    <script>
+        // Скрипт, който пуска звука при първото докосване на екрана от госта
+        document.body.addEventListener('click', function() {
+            var video = document.getElementById('weddingVideo');
+            if (video.muted) {
+                video.muted = false;
+                video.play();
+            }
+        }, { once: true });
+    </script>
 
 </body>
 </html>
-
-
 
 
 
